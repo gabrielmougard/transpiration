@@ -8,7 +8,7 @@
 
 "Transpiration" : an encryption transpiler                 
 ```
-(Note: This is an actively developed project so pretty much EVERYTHING is experimental)
+(Note: This is an actively developed project so pretty much EVERYTHING is experimental and likely to break...)
 
 **Transpiration** is an end-to-end transpiler for fully homomorphic encryption (FHE) that takes high-level programs and emit an efficient and secure FHE code. The second purpose of this project is also learning the LLVM and the MLIR framework :) If you have no clue of what FHE is, I provide a transcript of a talk I gave not so long ago on my [blog](https://www.norskegab.com/presentation-on-fully-homomorphic-encryption/) (I introduce the base concept of FHE and one of its subset being [TFHE](https://eprint.iacr.org/2018/421.pdf). I created some TFHE experiments [here](https://github.com/gabrielmougard/fhe-experiment)) 
 
