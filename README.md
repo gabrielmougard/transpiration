@@ -80,3 +80,21 @@ The AST consists of nodes that are derived from either `AbstractExpression` or `
                                                                       └─────│   TernaryOperator   │                 
                                                                             └─────────────────────┘                 
 ```
+
+## Intermediate Representation 
+
+* [WIP] Introduce our MLIR AST dialect (should not be too hard)
+* [WIP] Introduce our MLIR Polynomial dialect (a bit harder but should be ok)
+* [WIP] Introduce our MLIR FHE dialect (simplified)
+* [WIP] Introduce our MLIR BGV dialect (simplified) 
+
+## Compiler passes
+
+* Here, our passes are meant to lower the AST representation to lower representations like HIR (our own high-level intermediate representation) then to FHE, then to BGV then to the LLVM IR or directly to `emitC` dialect (with Microsoft SEAL as a backend). 
+
+* The passes aren't only meant to lower the dialect representations but also to apply optimization passes (in our case, SIMD operations for examples and of course the regular "trivial" LLVM optimizations like constant folding, "peephole" optimization, instruction combining, reassociation, control flow graph, common subexpressions, etc.)
+
+
+## Tooling
+
+* Then, we need to develop the tooling around this transpiler to easily generate C++ code. If we get there, that will be a first major stepstone :) Eventually, we could think about a frontend implementation (in python for example) to ease the experimentation. We'll then have a **transpiler** mode (using the tooling) and an **interactive** mode with a python lib. We could even think about a **compiler** mode, where we lower the representation to LLVM IR representing function calls to SEAL's C API, which we would previously link against SEAL to create a binary.
