@@ -28,7 +28,7 @@ namespace mlir
     } // namespace OpTrait
 } // namespace mlir
 
-#include "transpiration/IR/ast/ast_dialect.h.inc"
+#include "transpiration/IR/ast/ASTDialect.h.inc"
 
 bool containsExactlyOneExpressionNode(mlir::Region &region);
 
